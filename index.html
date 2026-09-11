@@ -3,2134 +3,1030 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartSpend AI</title>
 
-<title>Shree Ganeshan Nameh</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
-
-*{
-    box-sizing:border-box;
-}
-
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
-}
-
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    background:#f5eee5;
-    color:#421018;
-}
-
-.hidden{
-    display:none !important;
-}
-
-button{
-    cursor:pointer;
-    font-family:Georgia,"Times New Roman",serif;
-}
-
-input{
-    font-family:Arial,sans-serif;
-}
-
-
-/* =========================
-   PAGE 1
-========================= */
-
-#welcome{
-
-    width:100%;
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    /*
-       YOUR EXACT RED FLOWER IMAGE
-    */
-
-    background-image:url("red-texture.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-}
-
-.welcome-content{
-
-    padding:30px;
-
-    color:#fff8e8;
-}
-
-
-/* GANPATI CIRCLE */
-
-.ganpati-circle{
-
-    width:160px;
-    height:160px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:5px solid #c99b45;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.45);
-}
-
-
-#welcome h1{
-
-    font-size:48px;
-
-    margin:25px 0 12px;
-
-    color:#fff8e8;
-
-    text-shadow:
-        0 3px 8px rgba(0,0,0,0.8);
-}
-
-#welcome p{
-
-    font-size:18px;
-
-    color:#fff8e8;
-
-    text-shadow:
-        0 2px 5px rgba(0,0,0,0.8);
-}
-
-
-.enter-btn{
-
-    margin-top:20px;
-
-    padding:14px 38px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#c99b45;
-
-    color:#351017;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.3);
-}
-
-
-/* =========================
-   LOGIN PAGE
-========================= */
-
-#loginPage{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    /*
-       SAME EXACT RED FLOWER BACKGROUND
-    */
-
-    background-image:url("red-texture.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    padding:20px;
-}
-
-
-.login-box{
-
-    width:420px;
-
-    max-width:95%;
-
-    background:#fff8ec;
-
-    padding:32px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.4);
-}
-
-.login-box h2{
-
-    text-align:center;
-
-    color:#65131d;
-
-    margin-top:0;
-}
-
-.login-box label{
-
-    display:block;
-
-    font-weight:bold;
-
-    margin-top:16px;
-
-    margin-bottom:6px;
-}
-
-.login-box input{
-
-    width:100%;
-
-    padding:13px;
-
-    border:1px solid #cdb88e;
-
-    border-radius:9px;
-
-    outline:none;
-}
-
-.login-btn{
-
-    width:100%;
-
-    margin-top:20px;
-
-    padding:13px;
-
-    border:none;
-
-    border-radius:25px;
-
-    background:#c99b45;
-
-    color:#351017;
-
-    font-weight:bold;
-
-    font-size:16px;
-}
-
-.login-note{
-
-    font-size:12px;
-
-    color:#745d57;
-
-    line-height:1.5;
-}
-
-
-/* =========================
-   MAIN APP HEADER
-========================= */
-
-header{
-
-    height:70px;
-
-    background:#5d1019;
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:8px 20px;
-
-    position:sticky;
-
-    top:0;
-
-    z-index:50;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.3);
-}
-
-
-.brand{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    font-size:17px;
-
-    font-weight:bold;
-}
-
-.brand img{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:2px solid #c99b45;
-}
-
-
-/* PROFILE CIRCLE */
-
-.profile-circle{
-
-    width:46px;
-
-    height:46px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    border:2px solid #c99b45;
-
-    background:white;
-}
-
-.profile-circle img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-}
-
-
-/* =========================
-   CONTENT
-========================= */
-
-.container{
-
-    width:90%;
-
-    max-width:1050px;
-
-    margin:30px auto 60px;
-}
-
-
-/* HOME */
-
-.hero{
-
-    background:
-        linear-gradient(
-            135deg,
-            #65131d,
-            #421018
-        );
-
-    color:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    margin-bottom:25px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.15);
-}
-
-.hero h2{
-    margin-top:0;
-}
-
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px,1fr)
-        );
-
-    gap:20px;
-}
-
-
-.card{
-
-    background:#fffaf1;
-
-    border:1px solid #ead8b8;
-
-    border-radius:18px;
-
-    padding:24px;
-
-    box-shadow:
-        0 7px 24px rgba(75,35,18,0.08);
-}
-
-
-.clickable{
-
-    cursor:pointer;
-
-    transition:0.2s;
-}
-
-
-.clickable:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 12px 30px rgba(75,35,18,0.15);
-}
-
-
-.card h2,
-.card h3{
-
-    color:#65131d;
-}
-
-
-/* =========================
-   MEMORY PAGE
-========================= */
-
-.title-row{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin-bottom:15px;
-}
-
-
-.add-year{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    border:none;
-
-    background:#c99b45;
-
-    color:#351017;
-
-    font-size:32px;
-
-    font-weight:bold;
-}
-
-
-.back-btn{
-
-    border:none;
-
-    background:#efe0c7;
-
-    color:#5d1019;
-
-    padding:10px 17px;
-
-    border-radius:10px;
-
-    font-weight:bold;
-
-    margin-bottom:20px;
-}
-
-
-.year{
-
-    font-size:38px;
-
-    color:#c99b45;
-
-    font-weight:bold;
-}
-
-
-/* =========================
-   PHOTO / VIDEO
-========================= */
-
-.media-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(150px,1fr)
-        );
-
-    gap:12px;
-
-    margin-top:15px;
-}
-
-
-.media-grid img{
-
-    width:100%;
-
-    max-height:250px;
-
-    object-fit:cover;
-
-    border-radius:12px;
-}
-
-
-.media-grid video{
-
-    width:100%;
-
-    max-height:250px;
-
-    border-radius:12px;
-}
-
-
-.file-input{
-
-    width:100%;
-
-    margin-top:10px;
-}
-
-
-/* =========================
-   CONTRIBUTION
-========================= */
-
-.acknowledgement{
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff9eb,
-            #f4e0c0
-        );
-
-    border:2px solid #c99b45;
-
-    padding:35px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.15);
-}
-
-
-.acknowledgement h2{
-
-    color:#65131d;
-
-    margin-top:0;
-}
-
-
-.ack-text{
-
-    font-size:20px;
-
-    line-height:1.8;
-}
-
-
-.ganpati-morya{
-
-    font-size:26px;
-
-    font-weight:bold;
-
-    color:#65131d;
-
-    margin:25px;
-}
-
-
-.signature{
-
-    text-align:right;
-}
-
-
-.form-card{
-
-    margin-top:25px;
-}
-
-
-.form-card label{
-
-    display:block;
-
-    font-weight:bold;
-
-    margin-top:14px;
-
-    margin-bottom:6px;
-}
-
-
-.form-card input{
-
-    width:100%;
-
-    padding:13px;
-
-    border:1px solid #cdb88e;
-
-    border-radius:9px;
-}
-
-
-.save-btn{
-
-    margin-top:18px;
-
-    padding:13px 25px;
-
-    border:none;
-
-    border-radius:25px;
-
-    background:#c99b45;
-
-    color:#351017;
-
-    font-weight:bold;
-}
-
-
-.records{
-
-    margin-top:25px;
-}
-
-
-.record{
-
-    background:white;
-
-    border:1px solid #e3d2b6;
-
-    border-radius:12px;
-
-    padding:14px;
-
-    margin:10px 0;
-}
-
-
-.small{
-
-    font-size:12px;
-
-    color:#745e59;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:600px){
-
-    #welcome h1{
-
-        font-size:34px;
-    }
-
-    .ganpati-circle{
-
-        width:130px;
-        height:130px;
-    }
-
-    .brand span{
-
-        display:none;
-    }
-
-    .ack-text{
-
-        font-size:17px;
-    }
-
-}
-
+  html { scroll-behavior: smooth; }
+  body { font-family: Arial, sans-serif; }
+  .hidden-section { display:none; }
+  .modal { background:rgba(0,0,0,.7); }
 </style>
 </head>
 
+<body class="bg-slate-900 text-slate-100 min-h-screen">
 
-<body>
+<!-- ================= SIDEBAR ================= -->
+<div class="min-h-screen flex flex-col md:flex-row">
 
-
-<!-- =====================================================
-     PAGE 1
-===================================================== -->
-
-<section id="welcome">
-
-    <div class="welcome-content">
-
-        <!-- YOUR FIRST GANPATI PHOTO -->
-
-        <img
-            src="ganpati.jpg"
-            class="ganpati-circle"
-            alt="Ganpati"
-        >
-
-
-        <h1>
-            Shree Ganeshan Nameh
-        </h1>
-
-
-        <p>
-            Our Ganpati memories, celebrations and contributions
-        </p>
-
-
-        <button
-            class="enter-btn"
-            onclick="openLogin()"
-        >
-            Enter
-        </button>
-
+<aside class="w-full md:w-64 bg-slate-950 p-5 border-r border-slate-800">
+  <div class="flex items-center gap-3 mb-8">
+    <div class="bg-indigo-600 p-2 rounded-xl">
+      <i data-lucide="wallet"></i>
     </div>
+    <b class="text-xl">SmartSpend AI</b>
+  </div>
 
-</section>
+  <nav class="space-y-2">
+    <button onclick="showSection('dashboard')" class="navBtn w-full text-left p-3 rounded-xl hover:bg-slate-800">
+      📊 Dashboard
+    </button>
 
+    <button onclick="showSection('transactions')" class="navBtn w-full text-left p-3 rounded-xl hover:bg-slate-800">
+      🧾 Transactions
+    </button>
 
+    <button onclick="showSection('subscriptions')" class="navBtn w-full text-left p-3 rounded-xl hover:bg-slate-800">
+      🔄 Subscriptions
+    </button>
 
-<!-- =====================================================
-     PAGE 2 - LOGIN
-===================================================== -->
+    <button onclick="showSection('goals')" class="navBtn w-full text-left p-3 rounded-xl hover:bg-slate-800">
+      🎯 Savings Goals
+    </button>
 
-<section
-    id="loginPage"
-    class="hidden"
->
+    <button onclick="showSection('ai')" class="navBtn w-full text-left p-3 rounded-xl hover:bg-slate-800">
+      🤖 AI Insights
+    </button>
+  </nav>
 
-    <div class="login-box">
+  <div class="mt-10 border-t border-slate-800 pt-5">
+    <p class="font-semibold">Student User</p>
+    <p class="text-xs text-slate-500">RNGPIT Campus</p>
+  </div>
+</aside>
 
-        <h2>
-            Shree Ganeshan Nameh
-        </h2>
-
-
-        <label>
-            Gmail ID
-        </label>
-
-        <input
-            id="email"
-            type="email"
-            placeholder="yourname@gmail.com"
-        >
-
-
-        <label>
-            Password
-        </label>
-
-        <input
-            id="password"
-            type="password"
-            placeholder="Password"
-        >
-
-
-        <button
-            class="login-btn"
-            onclick="login()"
-        >
-            Login
-        </button>
-
-
-        <p class="login-note">
-
-            This is a free prototype.
-            Do not enter your real Gmail password here.
-            Later we can add secure Google Sign-In.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MAIN APP
-===================================================== -->
-
-<section
-    id="app"
-    class="hidden"
->
-
+<!-- ================= MAIN ================= -->
+<main class="flex-1 p-5 md:p-8 overflow-auto">
 
 <!-- HEADER -->
+<header class="flex flex-col lg:flex-row justify-between gap-4 mb-8">
+  <div>
+    <h1 class="text-3xl font-bold">SmartSpend AI</h1>
+    <p class="text-slate-400 mt-1">
+      Your personal student money assistant
+    </p>
+  </div>
 
-<header>
-
-    <div class="brand">
-
-        <img
-            src="ganpati.jpg"
-        >
-
-        <span>
-            Shree Ganeshan Nameh
-        </span>
-
-    </div>
-
-
-    <!-- ID PHOTO / PROFILE -->
-
-    <div class="profile-circle">
-
-        <img
-            id="profilePhoto"
-            src="ganpati.jpg"
-        >
-
-    </div>
-
+  <button onclick="openExpenseModal()"
+    class="bg-indigo-600 hover:bg-indigo-500 px-5 py-3 rounded-xl font-semibold">
+    + Add Expense
+  </button>
 </header>
 
 
+<!-- ================= DASHBOARD ================= -->
+<section id="dashboard">
 
-<main class="container">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
 
+<div class="bg-slate-950 p-5 rounded-2xl border border-slate-800">
+<p class="text-xs text-slate-400">MONTHLY BUDGET</p>
+<h2 id="budgetDisplay" class="text-2xl font-bold mt-2">₹8,000</h2>
+<button onclick="setBudget()" class="text-xs text-indigo-400 mt-2">
+Change Budget
+</button>
+</div>
 
-<!-- =====================================================
-     HOME PAGE
-===================================================== -->
+<div class="bg-slate-950 p-5 rounded-2xl border border-slate-800">
+<p class="text-xs text-slate-400">TOTAL SPENT</p>
+<h2 id="spentDisplay" class="text-2xl font-bold mt-2">₹0</h2>
+</div>
 
-<div id="home">
+<div class="bg-slate-950 p-5 rounded-2xl border border-slate-800">
+<p class="text-xs text-slate-400">REMAINING</p>
+<h2 id="remainingDisplay" class="text-2xl font-bold mt-2">₹8,000</h2>
+</div>
 
-    <div class="hero">
-
-        <h2>
-            Ganpati Bappa Morya 🙏
-        </h2>
-
-        <p>
-            Our family's Ganpati memory book.
-        </p>
-
-    </div>
-
-
-    <div class="cards">
-
-
-        <!-- MEMORIES -->
-
-        <div
-            class="card clickable"
-            onclick="showMemories()"
-        >
-
-            <h2>
-                📸 Memories
-            </h2>
-
-            <p>
-                Keep photos and videos
-                year by year.
-            </p>
-
-        </div>
-
-
-
-        <!-- CONTRIBUTION -->
-
-        <div
-            class="card clickable"
-            onclick="showContribution()"
-        >
-
-            <h2>
-                🪔 Contribution
-            </h2>
-
-            <p>
-                Keep a record of money
-                given for Ganpati.
-            </p>
-
-        </div>
-
-
-    </div>
+<div class="bg-slate-950 p-5 rounded-2xl border border-slate-800">
+<p class="text-xs text-slate-400">SUBSCRIPTIONS</p>
+<h2 id="subscriptionDisplay" class="text-2xl font-bold mt-2">₹0</h2>
+</div>
 
 </div>
 
 
+<!-- PROGRESS -->
+<div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 mb-6">
 
-<!-- =====================================================
-     MEMORIES
-===================================================== -->
+<div class="flex justify-between mb-2">
+<span class="font-semibold">Budget Usage</span>
+<span id="percentageDisplay">0%</span>
+</div>
 
-<div
-    id="memories"
-    class="hidden"
->
+<div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+<div id="budgetBar"
+class="h-full bg-indigo-500 rounded-full"
+style="width:0%">
+</div>
+</div>
 
-
-    <div class="title-row">
-
-        <h1>
-            📸 Memories
-        </h1>
-
-
-        <!-- PLUS BUTTON -->
-
-        <button
-            class="add-year"
-            onclick="addYear()"
-        >
-            +
-        </button>
-
-    </div>
-
-
-    <button
-        class="back-btn"
-        onclick="goHome()"
-    >
-        ← Back
-    </button>
-
-
-    <p class="small">
-
-        Tap + to add another year,
-        such as 2028, 2029, 2030, etc.
-
-    </p>
-
-
-    <div
-        id="yearCards"
-        class="cards"
-    ></div>
-
+<p id="budgetMessage" class="text-sm text-slate-400 mt-3">
+You're doing great!
+</p>
 
 </div>
 
 
+<!-- AI NATURAL LANGUAGE -->
+<div class="bg-slate-950 p-5 rounded-2xl border border-indigo-500/20 mb-6">
 
-<!-- =====================================================
-     YEAR PAGE
-===================================================== -->
+<h2 class="font-bold mb-3 flex gap-2">
+🤖 AI Quick Expense Entry
+</h2>
 
-<div
-    id="yearPage"
-    class="hidden"
->
+<div class="flex gap-2">
+<input id="aiExpenseInput"
+placeholder="Example: spent 150 on food"
+class="flex-1 bg-slate-900 border border-slate-700 rounded-xl p-3 outline-none">
 
+<button onclick="aiAddExpense()"
+class="bg-indigo-600 px-5 rounded-xl">
+Add
+</button>
+</div>
 
-    <button
-        class="back-btn"
-        onclick="showMemories()"
-    >
-        ← Back
-    </button>
-
-
-    <h1 id="yearTitle">
-        2026 Memories
-    </h1>
-
-
-    <div class="cards">
-
-
-        <!-- PHOTOS -->
-
-        <div class="card">
-
-            <h2>
-                📷 Photos
-            </h2>
-
-            <p>
-                Add photos from this Ganpati year.
-            </p>
-
-
-            <input
-                class="file-input"
-                type="file"
-                accept="image/*"
-                multiple
-                onchange="addPhotos(this)"
-            >
-
-
-            <div
-                id="photoPreview"
-                class="media-grid"
-            ></div>
-
-        </div>
-
-
-
-        <!-- VIDEOS -->
-
-        <div class="card">
-
-            <h2>
-                🎥 Videos
-            </h2>
-
-            <p>
-                Add videos from this Ganpati year.
-            </p>
-
-
-            <input
-                class="file-input"
-                type="file"
-                accept="video/*"
-                multiple
-                onchange="addVideos(this)"
-            >
-
-
-            <div
-                id="videoPreview"
-                class="media-grid"
-            ></div>
-
-        </div>
-
-
-    </div>
+<p class="text-xs text-slate-500 mt-2">
+Try: "Spent 200 on travel"
+</p>
 
 </div>
 
 
-
-<!-- =====================================================
-     CONTRIBUTION
-===================================================== -->
-
-<div
-    id="contributionPage"
-    class="hidden"
->
-
-
-    <button
-        class="back-btn"
-        onclick="goHome()"
-    >
-        ← Back
-    </button>
-
-
-    <h1>
-        🪔 Contribution
-    </h1>
-
-
-
-    <!-- ACKNOWLEDGEMENT -->
-
-    <div class="acknowledgement">
-
-        <h2>
-            Shree Ganeshan Nameh
-        </h2>
-
-
-        <div class="ack-text">
-
-            This is the acknowledge that
-
-            <b id="showName">
-                [name]
-            </b>
-
-            has contributed
-
-            <b>
-                ₹<span id="showAmount">[amount]</span>
-            </b>
-
-            towards the Ganpati celebration
-
-            on
-
-            <b id="showDate">
-                [date]
-            </b>.
-
-            <br>
-
-            We sincerely thank you for your valuable
-            contribution and support.
-
-        </div>
-
-
-        <div class="ganpati-morya">
-
-            Ganpati Bappa Morya
-
-        </div>
-
-
-        <div class="signature">
-
-            Sign by
-
-            <br>
-
-            <b>
-                Krishna
-            </b>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- ADD CONTRIBUTION FORM -->
-
-    <div class="card form-card">
-
-        <h2>
-            Add Contribution
-        </h2>
-
-
-        <label>
-            Name
-        </label>
-
-        <input
-            id="cName"
-            placeholder="Contributor name"
-        >
-
-
-        <label>
-            Amount
-        </label>
-
-        <input
-            id="cAmount"
-            type="number"
-            placeholder="Amount"
-        >
-
-
-        <label>
-            Date
-        </label>
-
-        <input
-            id="cDate"
-            type="date"
-        >
-
-
-        <label>
-            Sign by
-        </label>
-
-        <input
-            id="cSign"
-            placeholder="Enter sign"
-        >
-
-
-        <button
-            class="save-btn"
-            onclick="saveContribution()"
-        >
-            Save Contribution
-        </button>
-
-
-        <p class="small">
-
-            The contribution is saved only when
-            the correct internal code is entered
-            in the Sign by box.
-
-        </p>
-
-    </div>
-
-
-
-    <!-- SAVED RECORDS -->
-
-    <div class="card records">
-
-        <h2>
-            Saved Contributions
-        </h2>
-
-
-        <div id="records">
-
-            <p class="small">
-                No saved contributions yet.
-            </p>
-
-        </div>
-
-    </div>
-
-
+<!-- CHART -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+<div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+<h2 class="font-bold mb-5">Spending by Category</h2>
+<canvas id="expenseChart"></canvas>
 </div>
 
+<div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+<h2 class="font-bold mb-5">Recent Transactions</h2>
+<div id="recentTransactions"></div>
+</div>
 
-</main>
+</div>
 
 </section>
 
+
+<!-- ================= TRANSACTIONS ================= -->
+<section id="transactions" class="hidden-section">
+
+<div class="flex flex-col sm:flex-row justify-between gap-3 mb-5">
+<h2 class="text-2xl font-bold">Transactions</h2>
+
+<input id="searchTransaction"
+oninput="renderTransactions()"
+placeholder="Search expense..."
+class="bg-slate-950 border border-slate-700 rounded-xl p-3">
+</div>
+
+<div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden">
+
+<div id="transactionList"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SUBSCRIPTIONS ================= -->
+<section id="subscriptions" class="hidden-section">
+
+<div class="flex justify-between items-center mb-5">
+<h2 class="text-2xl font-bold">Subscriptions</h2>
+
+<button onclick="addSubscription()"
+class="bg-indigo-600 px-4 py-2 rounded-xl">
++ Add
+</button>
+</div>
+
+<div id="subscriptionList" class="grid gap-4"></div>
+
+</section>
+
+
+<!-- ================= GOALS ================= -->
+<section id="goals" class="hidden-section">
+
+<div class="flex justify-between items-center mb-5">
+<h2 class="text-2xl font-bold">Savings Goals</h2>
+
+<button onclick="addGoal()"
+class="bg-indigo-600 px-4 py-2 rounded-xl">
++ New Goal
+</button>
+</div>
+
+<div id="goalList" class="grid md:grid-cols-2 gap-5"></div>
+
+</section>
+
+
+<!-- ================= AI ================= -->
+<section id="ai" class="hidden-section">
+
+<h2 class="text-2xl font-bold mb-5">🤖 Smart AI Insights</h2>
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="bg-indigo-950/40 border border-indigo-500/30 p-6 rounded-2xl">
+<h3 class="font-bold text-lg">💡 Spending Analysis</h3>
+<p id="aiAnalysis" class="text-slate-300 mt-3">
+Add some expenses to receive personalized insights.
+</p>
+</div>
+
+<div class="bg-amber-950/30 border border-amber-500/30 p-6 rounded-2xl">
+<h3 class="font-bold text-lg">⚠️ Smart Alerts</h3>
+<p id="aiAlert" class="text-slate-300 mt-3">
+No alerts yet.
+</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+</div>
+
+
+<!-- ================= EXPENSE MODAL ================= -->
+
+<div id="expenseModal"
+class="modal fixed inset-0 hidden items-center justify-center p-5">
+
+<div class="bg-slate-950 w-full max-w-md p-6 rounded-2xl border border-slate-700">
+
+<div class="flex justify-between mb-5">
+<h2 class="text-xl font-bold">Add Expense</h2>
+
+<button onclick="closeExpenseModal()">✕</button>
+</div>
+
+<input id="expenseName"
+placeholder="Expense name"
+class="w-full bg-slate-900 border border-slate-700 p-3 rounded-xl mb-3">
+
+<input id="expenseAmount"
+type="number"
+placeholder="Amount ₹"
+class="w-full bg-slate-900 border border-slate-700 p-3 rounded-xl mb-3">
+
+<select id="expenseCategory"
+class="w-full bg-slate-900 border border-slate-700 p-3 rounded-xl mb-3">
+
+<option>Food</option>
+<option>Travel</option>
+<option>Shopping</option>
+<option>Education</option>
+<option>Entertainment</option>
+<option>Other</option>
+
+</select>
+
+<button onclick="saveExpense()"
+class="w-full bg-indigo-600 p-3 rounded-xl font-bold">
+Save Expense
+</button>
+
+</div>
+</div>
 
 
 <script>
 
+/* ================= DATA ================= */
 
-/* =====================================================
-   SECRET CONTRIBUTION CODE
-===================================================== */
+let budget = Number(localStorage.getItem("budget")) || 8000;
 
-const SECRET_CODE = "120086";
+let expenses =
+JSON.parse(localStorage.getItem("expenses")) || [];
 
+let subscriptions =
+JSON.parse(localStorage.getItem("subscriptions")) || [];
 
-let currentYear = 2026;
-
-
-
-/* =====================================================
-   PAGE 1 -> PAGE 2
-===================================================== */
-
-function openLogin(){
-
-    document
-        .getElementById("welcome")
-        .classList
-        .add("hidden");
+let goals =
+JSON.parse(localStorage.getItem("goals")) || [];
 
 
-    document
-        .getElementById("loginPage")
-        .classList
-        .remove("hidden");
+/* ================= NAVIGATION ================= */
 
-}
+function showSection(section){
 
+document.querySelectorAll("main section")
+.forEach(s => s.classList.add("hidden-section"));
 
+document.getElementById(section)
+.classList.remove("hidden-section");
 
-/* =====================================================
-   LOGIN
-===================================================== */
+if(section === "transactions")
+renderTransactions();
 
-function login(){
+if(section === "subscriptions")
+renderSubscriptions();
 
-    const email =
-        document
-        .getElementById("email")
-        .value
-        .trim();
+if(section === "goals")
+renderGoals();
 
-
-    const password =
-        document
-        .getElementById("password")
-        .value;
-
-
-    if(
-        email === "" ||
-        password === ""
-    ){
-
-        alert(
-            "Please enter Gmail ID and password."
-        );
-
-        return;
-
-    }
-
-
-    /*
-       This is only a local prototype.
-
-       The password is NOT stored.
-    */
-
-
-    document
-        .getElementById("loginPage")
-        .classList
-        .add("hidden");
-
-
-    document
-        .getElementById("app")
-        .classList
-        .remove("hidden");
-
-
-    /*
-       For now use the Ganpati photo
-       as the profile circle.
-    */
-
-    document
-        .getElementById("profilePhoto")
-        .src = "ganpati.jpg";
-
-
-    goHome();
+if(section === "ai")
+generateAI();
 
 }
 
 
+/* ================= EXPENSE MODAL ================= */
 
-/* =====================================================
-   HIDE ALL APP PAGES
-===================================================== */
+function openExpenseModal(){
 
-function hidePages(){
+document.getElementById("expenseModal")
+.classList.remove("hidden");
 
-    document
-        .getElementById("home")
-        .classList
-        .add("hidden");
+document.getElementById("expenseModal")
+.classList.add("flex");
 
+}
 
-    document
-        .getElementById("memories")
-        .classList
-        .add("hidden");
+function closeExpenseModal(){
 
-
-    document
-        .getElementById("yearPage")
-        .classList
-        .add("hidden");
-
-
-    document
-        .getElementById("contributionPage")
-        .classList
-        .add("hidden");
+document.getElementById("expenseModal")
+.classList.add("hidden");
 
 }
 
 
+/* ================= ADD EXPENSE ================= */
 
-/* =====================================================
-   HOME
-===================================================== */
+function saveExpense(){
 
-function goHome(){
+let name =
+document.getElementById("expenseName").value.trim();
 
-    hidePages();
+let amount =
+Number(document.getElementById("expenseAmount").value);
 
+let category =
+document.getElementById("expenseCategory").value;
 
-    document
-        .getElementById("home")
-        .classList
-        .remove("hidden");
+if(!name || amount <= 0){
+
+alert("Please enter valid details.");
+
+return;
+
+}
+
+expenses.push({
+
+id: Date.now(),
+
+name:name,
+
+amount:amount,
+
+category:category,
+
+date:new Date().toLocaleDateString()
+
+});
+
+saveData();
+
+document.getElementById("expenseName").value="";
+document.getElementById("expenseAmount").value="";
+
+closeExpenseModal();
+
+updateDashboard();
 
 }
 
 
+/* ================= AI EXPENSE ================= */
 
-/* =====================================================
-   MEMORIES
-===================================================== */
+function aiAddExpense(){
 
-function showMemories(){
+let text =
+document.getElementById("aiExpenseInput").value
+.toLowerCase();
 
-    hidePages();
+let amountMatch =
+text.match(/\d+/);
 
+if(!amountMatch){
 
-    document
-        .getElementById("memories")
-        .classList
-        .remove("hidden");
+alert("Please include an amount.");
 
+return;
 
-    renderYears();
+}
+
+let amount =
+Number(amountMatch[0]);
+
+let category="Other";
+
+if(text.includes("food") ||
+text.includes("canteen") ||
+text.includes("lunch"))
+category="Food";
+
+else if(text.includes("travel") ||
+text.includes("bus") ||
+text.includes("auto"))
+category="Travel";
+
+else if(text.includes("shop") ||
+text.includes("clothes"))
+category="Shopping";
+
+else if(text.includes("book") ||
+text.includes("study"))
+category="Education";
+
+else if(text.includes("movie") ||
+text.includes("game"))
+category="Entertainment";
+
+expenses.push({
+
+id:Date.now(),
+
+name:"AI Added Expense",
+
+amount:amount,
+
+category:category,
+
+date:new Date().toLocaleDateString()
+
+});
+
+document.getElementById("aiExpenseInput").value="";
+
+saveData();
+
+updateDashboard();
+
+alert("Expense added successfully!");
 
 }
 
 
+/* ================= DASHBOARD ================= */
 
-/* =====================================================
-   GET YEARS
-===================================================== */
+function updateDashboard(){
 
-function getYears(){
+let spent =
+expenses.reduce((sum,e)=>sum+e.amount,0);
 
-    return JSON.parse(
+let remaining =
+budget-spent;
 
-        localStorage.getItem(
-            "ganpatiYears"
-        )
+let percentage =
+budget ? Math.round((spent/budget)*100) : 0;
 
-        ||
+let subscriptionTotal =
+subscriptions.reduce((sum,s)=>sum+s.amount,0);
 
-        "[2026,2027]"
+document.getElementById("budgetDisplay")
+.innerText="₹"+budget.toLocaleString();
 
-    );
+document.getElementById("spentDisplay")
+.innerText="₹"+spent.toLocaleString();
+
+document.getElementById("remainingDisplay")
+.innerText="₹"+remaining.toLocaleString();
+
+document.getElementById("subscriptionDisplay")
+.innerText="₹"+subscriptionTotal.toLocaleString();
+
+document.getElementById("percentageDisplay")
+.innerText=percentage+"%";
+
+document.getElementById("budgetBar")
+.style.width=Math.min(percentage,100)+"%";
+
+if(percentage >= 100){
+
+document.getElementById("budgetMessage")
+.innerText="⚠️ You have crossed your budget.";
+
+}
+else if(percentage >= 80){
+
+document.getElementById("budgetMessage")
+.innerText="⚠️ Warning: You have used more than 80% of your budget.";
+
+}
+else{
+
+document.getElementById("budgetMessage")
+.innerText="✅ You're on track with your budget.";
+
+}
+
+renderRecent();
+renderChart();
 
 }
 
 
+/* ================= BUDGET ================= */
 
-/* =====================================================
-   DISPLAY YEARS
-===================================================== */
+function setBudget(){
 
-function renderYears(){
+let value =
+prompt("Enter your monthly budget:",budget);
 
-    const years = getYears();
+if(value && Number(value)>0){
 
+budget=Number(value);
 
-    const container =
-        document.getElementById(
-            "yearCards"
-        );
+localStorage.setItem("budget",budget);
 
+updateDashboard();
 
-    container.innerHTML = "";
-
-
-    years.forEach(function(year){
-
-        const card =
-            document.createElement(
-                "div"
-            );
-
-
-        card.className =
-            "card clickable";
-
-
-        card.onclick =
-            function(){
-
-                openYear(year);
-
-            };
-
-
-        card.innerHTML = `
-
-            <div class="year">
-                ${year}
-            </div>
-
-            <p>
-                Ganpati memories from ${year}
-            </p>
-
-        `;
-
-
-        container.appendChild(card);
-
-    });
+}
 
 }
 
 
+/* ================= TRANSACTIONS ================= */
 
-/* =====================================================
-   ADD NEW YEAR WITH +
-===================================================== */
+function renderTransactions(){
 
-function addYear(){
+let search =
+(document.getElementById("searchTransaction")?.value || "")
+.toLowerCase();
 
-    const answer =
-        prompt(
-            "Enter the year you want to add:"
-        );
+let list =
+expenses.filter(e =>
+e.name.toLowerCase().includes(search) ||
+e.category.toLowerCase().includes(search)
+);
 
+let container =
+document.getElementById("transactionList");
 
-    if(!answer){
+if(list.length===0){
 
-        return;
+container.innerHTML=
+`<p class="p-6 text-slate-400">
+No transactions found.
+</p>`;
 
-    }
+return;
 
+}
 
-    const year =
-        parseInt(
-            answer,
-            10
-        );
+container.innerHTML=list
+.slice()
+.reverse()
+.map(e=>`
 
+<div class="p-5 border-b border-slate-800 flex justify-between items-center">
 
-    if(
-        isNaN(year) ||
-        year < 2026 ||
-        year > 2100
-    ){
+<div>
+<p class="font-semibold">${e.name}</p>
+<p class="text-xs text-slate-500">
+${e.category} • ${e.date}
+</p>
+</div>
 
-        alert(
-            "Please enter a valid year."
-        );
+<div class="flex items-center gap-4">
 
-        return;
+<b>₹${e.amount}</b>
 
-    }
+<button
+onclick="deleteExpense(${e.id})"
+class="text-red-400">
+Delete
+</button>
 
+</div>
 
-    const years =
-        getYears();
+</div>
 
-
-    if(
-        years.includes(year)
-    ){
-
-        alert(
-            "This year already exists."
-        );
-
-        return;
-
-    }
-
-
-    years.push(year);
-
-
-    years.sort(
-        function(a,b){
-
-            return a-b;
-
-        }
-    );
-
-
-    localStorage.setItem(
-
-        "ganpatiYears",
-
-        JSON.stringify(years)
-
-    );
-
-
-    renderYears();
+`).join("");
 
 }
 
 
+function deleteExpense(id){
 
-/* =====================================================
-   OPEN A YEAR
-===================================================== */
+expenses =
+expenses.filter(e=>e.id!==id);
 
-function openYear(year){
+saveData();
 
-    currentYear = year;
+updateDashboard();
 
-
-    hidePages();
-
-
-    document
-        .getElementById("yearPage")
-        .classList
-        .remove("hidden");
-
-
-    document
-        .getElementById("yearTitle")
-        .innerText =
-            year + " Memories";
-
-
-    document
-        .getElementById("photoPreview")
-        .innerHTML = "";
-
-
-    document
-        .getElementById("videoPreview")
-        .innerHTML = "";
+renderTransactions();
 
 }
 
 
+/* ================= RECENT ================= */
 
-/* =====================================================
-   ADD PHOTOS
-===================================================== */
+function renderRecent(){
 
-function addPhotos(input){
+let container =
+document.getElementById("recentTransactions");
 
-    const preview =
-        document.getElementById(
-            "photoPreview"
-        );
+let list =
+expenses.slice(-5).reverse();
 
+if(!list.length){
 
-    const files =
-        Array.from(
-            input.files
-        );
+container.innerHTML=
+`<p class="text-slate-500">
+No expenses added yet.
+</p>`;
 
+return;
 
-    files.forEach(
-        function(file){
+}
 
-            const image =
-                document.createElement(
-                    "img"
-                );
+container.innerHTML=list.map(e=>`
 
+<div class="flex justify-between py-3 border-b border-slate-800">
 
-            image.src =
-                URL.createObjectURL(
-                    file
-                );
+<div>
+<p class="font-medium">${e.name}</p>
+<p class="text-xs text-slate-500">${e.category}</p>
+</div>
 
+<span class="font-bold">
+₹${e.amount}
+</span>
 
-            preview.appendChild(
-                image
-            );
+</div>
 
-        }
-    );
+`).join("");
 
 }
 
 
+/* ================= CHART ================= */
 
-/* =====================================================
-   ADD VIDEOS
-===================================================== */
+let chart;
 
-function addVideos(input){
+function renderChart(){
 
-    const preview =
-        document.getElementById(
-            "videoPreview"
-        );
+let categories={};
 
+expenses.forEach(e=>{
 
-    const files =
-        Array.from(
-            input.files
-        );
+categories[e.category] =
+(categories[e.category]||0)+e.amount;
 
+});
 
-    files.forEach(
-        function(file){
+let canvas =
+document.getElementById("expenseChart");
 
-            const video =
-                document.createElement(
-                    "video"
-                );
+if(chart) chart.destroy();
 
+chart = new Chart(canvas,{
 
-            video.src =
-                URL.createObjectURL(
-                    file
-                );
+type:"doughnut",
 
+data:{
 
-            video.controls = true;
+labels:Object.keys(categories),
 
+datasets:[{
 
-            preview.appendChild(
-                video
-            );
+data:Object.values(categories)
 
-        }
-    );
+}]
+
+},
+
+options:{
+
+plugins:{
+
+legend:{
+labels:{
+color:"white"
+}
+}
+
+}
+
+}
+
+});
 
 }
 
 
+/* ================= SUBSCRIPTIONS ================= */
 
-/* =====================================================
-   CONTRIBUTION PAGE
-===================================================== */
+function addSubscription(){
 
-function showContribution(){
+let name =
+prompt("Subscription name:");
 
-    hidePages();
+if(!name) return;
 
+let amount =
+Number(prompt("Monthly amount ₹:"));
 
-    document
-        .getElementById(
-            "contributionPage"
-        )
-        .classList
-        .remove("hidden");
+if(!amount) return;
 
+subscriptions.push({
 
-    if(
-        document
-        .getElementById("cDate")
-        .value === ""
-    ){
+id:Date.now(),
 
-        document
-        .getElementById("cDate")
-        .value =
-            new Date()
-            .toISOString()
-            .slice(0,10);
+name:name,
 
-    }
+amount:amount
 
+});
 
-    updateAcknowledgement();
+saveData();
 
+renderSubscriptions();
 
-    showRecords();
+updateDashboard();
 
 }
 
 
+function renderSubscriptions(){
 
-/* =====================================================
-   LIVE ACKNOWLEDGEMENT
-===================================================== */
+let container =
+document.getElementById("subscriptionList");
 
-function updateAcknowledgement(){
+if(!subscriptions.length){
 
-    document
-        .getElementById("showName")
-        .innerText =
+container.innerHTML=
+`<p class="text-slate-400">
+No subscriptions added.
+</p>`;
 
-        document
-        .getElementById("cName")
-        .value
+return;
 
-        ||
+}
 
-        "[name]";
+container.innerHTML=subscriptions.map(s=>`
 
+<div class="bg-slate-950 border border-slate-800 p-5 rounded-2xl flex justify-between items-center">
 
-    document
-        .getElementById("showAmount")
-        .innerText =
+<div>
 
-        document
-        .getElementById("cAmount")
-        .value
+<h3 class="font-bold">${s.name}</h3>
 
-        ||
+<p class="text-sm text-slate-400">
+₹${s.amount} / month
+</p>
 
-        "[amount]";
+</div>
 
+<button onclick="deleteSubscription(${s.id})"
+class="text-red-400">
+Delete
+</button>
 
-    document
-        .getElementById("showDate")
-        .innerText =
+</div>
 
-        document
-        .getElementById("cDate")
-        .value
-
-        ||
-
-        "[date]";
+`).join("");
 
 }
 
 
-document
-    .getElementById("cName")
-    .addEventListener(
-        "input",
-        updateAcknowledgement
-    );
+function deleteSubscription(id){
 
+subscriptions =
+subscriptions.filter(s=>s.id!==id);
 
-document
-    .getElementById("cAmount")
-    .addEventListener(
-        "input",
-        updateAcknowledgement
-    );
+saveData();
 
+renderSubscriptions();
 
-document
-    .getElementById("cDate")
-    .addEventListener(
-        "input",
-        updateAcknowledgement
-    );
-
-
-
-/* =====================================================
-   SAVE CONTRIBUTION
-===================================================== */
-
-function saveContribution(){
-
-    const name =
-        document
-        .getElementById("cName")
-        .value
-        .trim();
-
-
-    const amount =
-        document
-        .getElementById("cAmount")
-        .value
-        .trim();
-
-
-    const date =
-        document
-        .getElementById("cDate")
-        .value;
-
-
-    const sign =
-        document
-        .getElementById("cSign")
-        .value
-        .trim();
-
-
-
-    /* Check basic details */
-
-    if(
-        name === "" ||
-        amount === "" ||
-        date === ""
-    ){
-
-        alert(
-            "Please fill Name, Amount and Date."
-        );
-
-        return;
-
-    }
-
-
-
-    /*
-       IMPORTANT:
-
-       ONLY 120086 saves the contribution.
-
-       The number itself is NOT saved.
-       The number itself is NOT displayed.
-    */
-
-    if(
-        sign !== SECRET_CODE
-    ){
-
-        alert(
-            "Contribution was not saved."
-        );
-
-        return;
-
-    }
-
-
-
-    /*
-       Get old records
-    */
-
-    const contributions =
-        JSON.parse(
-
-            localStorage.getItem(
-                "ganpatiContributions"
-            )
-
-            ||
-
-            "[]"
-
-        );
-
-
-
-    /*
-       Save contribution.
-
-       We save Krishna as the signature.
-    */
-
-    contributions.push({
-
-        name:name,
-
-        amount:amount,
-
-        date:date,
-
-        signedBy:"Krishna"
-
-    });
-
-
-
-    localStorage.setItem(
-
-        "ganpatiContributions",
-
-        JSON.stringify(
-            contributions
-        )
-
-    );
-
-
-
-    alert(
-        "Contribution saved successfully!"
-    );
-
-
-
-    /*
-       Clear fields
-    */
-
-    document
-        .getElementById("cName")
-        .value = "";
-
-
-    document
-        .getElementById("cAmount")
-        .value = "";
-
-
-    document
-        .getElementById("cSign")
-        .value = "";
-
-
-    updateAcknowledgement();
-
-
-    showRecords();
+updateDashboard();
 
 }
 
 
+/* ================= GOALS ================= */
 
-/* =====================================================
-   SHOW SAVED CONTRIBUTIONS
-===================================================== */
+function addGoal(){
 
-function showRecords(){
+let name =
+prompt("Goal name:");
 
-    const contributions =
-        JSON.parse(
+if(!name) return;
 
-            localStorage.getItem(
-                "ganpatiContributions"
-            )
+let target =
+Number(prompt("Target amount ₹:"));
 
-            ||
+if(!target) return;
 
-            "[]"
+goals.push({
 
-        );
+id:Date.now(),
 
+name:name,
 
-    const records =
-        document.getElementById(
-            "records"
-        );
+target:target,
 
+saved:0
 
-    records.innerHTML = "";
+});
 
+saveData();
 
-
-    if(
-        contributions.length === 0
-    ){
-
-        records.innerHTML = `
-
-            <p class="small">
-                No saved contributions yet.
-            </p>
-
-        `;
-
-        return;
-
-    }
-
-
-
-    contributions.forEach(
-        function(item){
-
-            const record =
-                document.createElement(
-                    "div"
-                );
-
-
-            record.className =
-                "record";
-
-
-            record.innerHTML = `
-
-                <b>
-                    ${escapeHTML(item.name)}
-                </b>
-
-                — ₹${escapeHTML(item.amount)}
-
-                <br>
-
-                <span class="small">
-
-                    Date:
-                    ${escapeHTML(item.date)}
-
-                    ·
-
-                    Sign by:
-                    Krishna
-
-                </span>
-
-            `;
-
-
-            records.appendChild(
-                record
-            );
-
-        }
-    );
+renderGoals();
 
 }
 
 
+function renderGoals(){
 
-/* =====================================================
-   PROTECT DISPLAY TEXT
-===================================================== */
+let container =
+document.getElementById("goalList");
 
-function escapeHTML(value){
+if(!goals.length){
 
-    return String(value)
+container.innerHTML=
+`<p class="text-slate-400">
+No savings goals yet.
+</p>`;
 
-        .replace(
-            /[&<>"']/g,
-
-            function(character){
-
-                return {
-
-                    "&":"&amp;",
-                    "<":"&lt;",
-                    ">":"&gt;",
-                    '"':"&quot;",
-                    "'":"&#039;"
-
-                }[character];
-
-            }
-        );
+return;
 
 }
+
+container.innerHTML=goals.map(g=>{
+
+let percent =
+Math.min(Math.round((g.saved/g.target)*100),100);
+
+return `
+
+<div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl">
+
+<div class="flex justify-between">
+
+<h3 class="font-bold">${g.name}</h3>
+
+<button onclick="deleteGoal(${g.id})"
+class="text-red-400">
+Delete
+</button>
+
+</div>
+
+<p class="text-sm text-slate-400 mt-2">
+₹${g.saved} / ₹${g.target}
+</p>
+
+<div class="h-3 bg-slate-800 rounded-full mt-3 overflow-hidden">
+
+<div class="h-full bg-indigo-500"
+style="width:${percent}%">
+</div>
+
+</div>
+
+<p class="text-xs text-indigo-400 mt-2">
+${percent}% completed
+</p>
+
+<button onclick="addGoalMoney(${g.id})"
+class="mt-4 bg-indigo-600 px-3 py-2 rounded-lg text-sm">
+Add Savings
+</button>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+function addGoalMoney(id){
+
+let amount =
+Number(prompt("How much did you save? ₹"));
+
+if(!amount) return;
+
+let goal =
+goals.find(g=>g.id===id);
+
+goal.saved += amount;
+
+saveData();
+
+renderGoals();
+
+}
+
+
+function deleteGoal(id){
+
+goals =
+goals.filter(g=>g.id!==id);
+
+saveData();
+
+renderGoals();
+
+}
+
+
+/* ================= AI ================= */
+
+function generateAI(){
+
+let total =
+expenses.reduce((sum,e)=>sum+e.amount,0);
+
+if(!expenses.length){
+
+document.getElementById("aiAnalysis")
+.innerText="Add expenses to generate your spending analysis.";
+
+return;
+
+}
+
+let categories={};
+
+expenses.forEach(e=>{
+
+categories[e.category] =
+(categories[e.category]||0)+e.amount;
+
+});
+
+let biggest =
+Object.entries(categories)
+.sort((a,b)=>b[1]-a[1])[0];
+
+let percent =
+Math.round((total/budget)*100);
+
+document.getElementById("aiAnalysis").innerText =
+`You have spent ₹${total.toLocaleString()} this month. 
+Your biggest spending category is ${biggest[0]} at ₹${biggest[1].toLocaleString()}.
+You have used ${percent}% of your budget.`;
+
+if(percent>=80){
+
+document.getElementById("aiAlert").innerText =
+"Your spending is getting close to your monthly budget. Consider reducing non-essential expenses.";
+
+}else{
+
+document.getElementById("aiAlert").innerText =
+"Your spending is currently within a healthy budget range.";
+
+}
+
+}
+
+
+/* ================= STORAGE ================= */
+
+function saveData(){
+
+localStorage.setItem(
+"expenses",
+JSON.stringify(expenses)
+);
+
+localStorage.setItem(
+"subscriptions",
+JSON.stringify(subscriptions)
+);
+
+localStorage.setItem(
+"goals",
+JSON.stringify(goals)
+);
+
+}
+
+
+/* ================= START ================= */
+
+lucide.createIcons();
+
+updateDashboard();
 
 </script>
 
