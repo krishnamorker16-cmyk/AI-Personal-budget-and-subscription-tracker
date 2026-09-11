@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shree Ganeshan Nameh</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f5eee5;
+    color:#421018;
+}
+
+.hidden{
+    display:none !important;
+}
+
+button{
+    cursor:pointer;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+input{
+    font-family:Arial,sans-serif;
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+#welcome{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    /*
+       YOUR EXACT RED FLOWER IMAGE
+    */
+
+    background-image:url("red-texture.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+}
+
+.welcome-content{
+
+    padding:30px;
+
+    color:#fff8e8;
+}
+
+
+/* GANPATI CIRCLE */
+
+.ganpati-circle{
+
+    width:160px;
+    height:160px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #c99b45;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.45);
+}
+
+
+#welcome h1{
+
+    font-size:48px;
+
+    margin:25px 0 12px;
+
+    color:#fff8e8;
+
+    text-shadow:
+        0 3px 8px rgba(0,0,0,0.8);
+}
+
+#welcome p{
+
+    font-size:18px;
+
+    color:#fff8e8;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,0.8);
+}
+
+
+.enter-btn{
+
+    margin-top:20px;
+
+    padding:14px 38px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#c99b45;
+
+    color:#351017;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+#loginPage{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    /*
+       SAME EXACT RED FLOWER BACKGROUND
+    */
+
+    background-image:url("red-texture.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    padding:20px;
+}
+
+
+.login-box{
+
+    width:420px;
+
+    max-width:95%;
+
+    background:#fff8ec;
+
+    padding:32px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.4);
+}
+
+.login-box h2{
+
+    text-align:center;
+
+    color:#65131d;
+
+    margin-top:0;
+}
+
+.login-box label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-top:16px;
+
+    margin-bottom:6px;
+}
+
+.login-box input{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #cdb88e;
+
+    border-radius:9px;
+
+    outline:none;
+}
+
+.login-btn{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#c99b45;
+
+    color:#351017;
+
+    font-weight:bold;
+
+    font-size:16px;
+}
+
+.login-note{
+
+    font-size:12px;
+
+    color:#745d57;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   MAIN APP HEADER
+========================= */
+
+header{
+
+    height:70px;
+
+    background:#5d1019;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:8px 20px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:50;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.3);
+}
+
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:17px;
+
+    font-weight:bold;
+}
+
+.brand img{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid #c99b45;
+}
+
+
+/* PROFILE CIRCLE */
+
+.profile-circle{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:2px solid #c99b45;
+
+    background:white;
+}
+
+.profile-circle img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.container{
+
+    width:90%;
+
+    max-width:1050px;
+
+    margin:30px auto 60px;
+}
+
+
+/* HOME */
+
+.hero{
+
+    background:
+        linear-gradient(
+            135deg,
+            #65131d,
+            #421018
+        );
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hero h2{
+    margin-top:0;
+}
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap:20px;
+}
+
+
+.card{
+
+    background:#fffaf1;
+
+    border:1px solid #ead8b8;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    box-shadow:
+        0 7px 24px rgba(75,35,18,0.08);
+}
+
+
+.clickable{
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+
+.clickable:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(75,35,18,0.15);
+}
+
+
+.card h2,
+.card h3{
+
+    color:#65131d;
+}
+
+
+/* =========================
+   MEMORY PAGE
+========================= */
+
+.title-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+}
+
+
+.add-year{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#c99b45;
+
+    color:#351017;
+
+    font-size:32px;
+
+    font-weight:bold;
+}
+
+
+.back-btn{
+
+    border:none;
+
+    background:#efe0c7;
+
+    color:#5d1019;
+
+    padding:10px 17px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+
+.year{
+
+    font-size:38px;
+
+    color:#c99b45;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   PHOTO / VIDEO
+========================= */
+
+.media-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(150px,1fr)
+        );
+
+    gap:12px;
+
+    margin-top:15px;
+}
+
+
+.media-grid img{
+
+    width:100%;
+
+    max-height:250px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+}
+
+
+.media-grid video{
+
+    width:100%;
+
+    max-height:250px;
+
+    border-radius:12px;
+}
+
+
+.file-input{
+
+    width:100%;
+
+    margin-top:10px;
+}
+
+
+/* =========================
+   CONTRIBUTION
+========================= */
+
+.acknowledgement{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9eb,
+            #f4e0c0
+        );
+
+    border:2px solid #c99b45;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+.acknowledgement h2{
+
+    color:#65131d;
+
+    margin-top:0;
+}
+
+
+.ack-text{
+
+    font-size:20px;
+
+    line-height:1.8;
+}
+
+
+.ganpati-morya{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:#65131d;
+
+    margin:25px;
+}
+
+
+.signature{
+
+    text-align:right;
+}
+
+
+.form-card{
+
+    margin-top:25px;
+}
+
+
+.form-card label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-top:14px;
+
+    margin-bottom:6px;
+}
+
+
+.form-card input{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #cdb88e;
+
+    border-radius:9px;
+}
+
+
+.save-btn{
+
+    margin-top:18px;
+
+    padding:13px 25px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#c99b45;
+
+    color:#351017;
+
+    font-weight:bold;
+}
+
+
+.records{
+
+    margin-top:25px;
+}
+
+
+.record{
+
+    background:white;
+
+    border:1px solid #e3d2b6;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    margin:10px 0;
+}
+
+
+.small{
+
+    font-size:12px;
+
+    color:#745e59;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    #welcome h1{
+
+        font-size:34px;
+    }
+
+    .ganpati-circle{
+
+        width:130px;
+        height:130px;
+    }
+
+    .brand span{
+
+        display:none;
+    }
+
+    .ack-text{
+
+        font-size:17px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section id="welcome">
+
+    <div class="welcome-content">
+
+        <!-- YOUR FIRST GANPATI PHOTO -->
+
+        <img
+            src="ganpati.jpg"
+            class="ganpati-circle"
+            alt="Ganpati"
+        >
+
+
+        <h1>
+            Shree Ganeshan Nameh
+        </h1>
+
+
+        <p>
+            Our Ganpati memories, celebrations and contributions
+        </p>
+
+
+        <button
+            class="enter-btn"
+            onclick="openLogin()"
+        >
+            Enter
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 2 - LOGIN
+===================================================== -->
+
+<section
+    id="loginPage"
+    class="hidden"
+>
+
+    <div class="login-box">
+
+        <h2>
+            Shree Ganeshan Nameh
+        </h2>
+
+
+        <label>
+            Gmail ID
+        </label>
+
+        <input
+            id="email"
+            type="email"
+            placeholder="yourname@gmail.com"
+        >
+
+
+        <label>
+            Password
+        </label>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+        >
+
+
+        <button
+            class="login-btn"
+            onclick="login()"
+        >
+            Login
+        </button>
+
+
+        <p class="login-note">
+
+            This is a free prototype.
+            Do not enter your real Gmail password here.
+            Later we can add secure Google Sign-In.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN APP
+===================================================== -->
+
+<section
+    id="app"
+    class="hidden"
+>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="brand">
+
+        <img
+            src="ganpati.jpg"
+        >
+
+        <span>
+            Shree Ganeshan Nameh
+        </span>
+
+    </div>
+
+
+    <!-- ID PHOTO / PROFILE -->
+
+    <div class="profile-circle">
+
+        <img
+            id="profilePhoto"
+            src="ganpati.jpg"
+        >
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
+
+<div id="home">
+
+    <div class="hero">
+
+        <h2>
+            Ganpati Bappa Morya 🙏
+        </h2>
+
+        <p>
+            Our family's Ganpati memory book.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- MEMORIES -->
+
+        <div
+            class="card clickable"
+            onclick="showMemories()"
+        >
+
+            <h2>
+                📸 Memories
+            </h2>
+
+            <p>
+                Keep photos and videos
+                year by year.
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTRIBUTION -->
+
+        <div
+            class="card clickable"
+            onclick="showContribution()"
+        >
+
+            <h2>
+                🪔 Contribution
+            </h2>
+
+            <p>
+                Keep a record of money
+                given for Ganpati.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<div
+    id="memories"
+    class="hidden"
+>
+
+
+    <div class="title-row">
+
+        <h1>
+            📸 Memories
+        </h1>
+
+
+        <!-- PLUS BUTTON -->
+
+        <button
+            class="add-year"
+            onclick="addYear()"
+        >
+            +
+        </button>
+
+    </div>
+
+
+    <button
+        class="back-btn"
+        onclick="goHome()"
+    >
+        ← Back
+    </button>
+
+
+    <p class="small">
+
+        Tap + to add another year,
+        such as 2028, 2029, 2030, etc.
+
+    </p>
+
+
+    <div
+        id="yearCards"
+        class="cards"
+    ></div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     YEAR PAGE
+===================================================== -->
+
+<div
+    id="yearPage"
+    class="hidden"
+>
+
+
+    <button
+        class="back-btn"
+        onclick="showMemories()"
+    >
+        ← Back
+    </button>
+
+
+    <h1 id="yearTitle">
+        2026 Memories
+    </h1>
+
+
+    <div class="cards">
+
+
+        <!-- PHOTOS -->
+
+        <div class="card">
+
+            <h2>
+                📷 Photos
+            </h2>
+
+            <p>
+                Add photos from this Ganpati year.
+            </p>
+
+
+            <input
+                class="file-input"
+                type="file"
+                accept="image/*"
+                multiple
+                onchange="addPhotos(this)"
+            >
+
+
+            <div
+                id="photoPreview"
+                class="media-grid"
+            ></div>
+
+        </div>
+
+
+
+        <!-- VIDEOS -->
+
+        <div class="card">
+
+            <h2>
+                🎥 Videos
+            </h2>
+
+            <p>
+                Add videos from this Ganpati year.
+            </p>
+
+
+            <input
+                class="file-input"
+                type="file"
+                accept="video/*"
+                multiple
+                onchange="addVideos(this)"
+            >
+
+
+            <div
+                id="videoPreview"
+                class="media-grid"
+            ></div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONTRIBUTION
+===================================================== -->
+
+<div
+    id="contributionPage"
+    class="hidden"
+>
+
+
+    <button
+        class="back-btn"
+        onclick="goHome()"
+    >
+        ← Back
+    </button>
+
+
+    <h1>
+        🪔 Contribution
+    </h1>
+
+
+
+    <!-- ACKNOWLEDGEMENT -->
+
+    <div class="acknowledgement">
+
+        <h2>
+            Shree Ganeshan Nameh
+        </h2>
+
+
+        <div class="ack-text">
+
+            This is the acknowledge that
+
+            <b id="showName">
+                [name]
+            </b>
+
+            has contributed
+
+            <b>
+                ₹<span id="showAmount">[amount]</span>
+            </b>
+
+            towards the Ganpati celebration
+
+            on
+
+            <b id="showDate">
+                [date]
+            </b>.
+
+            <br>
+
+            We sincerely thank you for your valuable
+            contribution and support.
+
+        </div>
+
+
+        <div class="ganpati-morya">
+
+            Ganpati Bappa Morya
+
+        </div>
+
+
+        <div class="signature">
+
+            Sign by
+
+            <br>
+
+            <b>
+                Krishna
+            </b>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ADD CONTRIBUTION FORM -->
+
+    <div class="card form-card">
+
+        <h2>
+            Add Contribution
+        </h2>
+
+
+        <label>
+            Name
+        </label>
+
+        <input
+            id="cName"
+            placeholder="Contributor name"
+        >
+
+
+        <label>
+            Amount
+        </label>
+
+        <input
+            id="cAmount"
+            type="number"
+            placeholder="Amount"
+        >
+
+
+        <label>
+            Date
+        </label>
+
+        <input
+            id="cDate"
+            type="date"
+        >
+
+
+        <label>
+            Sign by
+        </label>
+
+        <input
+            id="cSign"
+            placeholder="Enter sign"
+        >
+
+
+        <button
+            class="save-btn"
+            onclick="saveContribution()"
+        >
+            Save Contribution
+        </button>
+
+
+        <p class="small">
+
+            The contribution is saved only when
+            the correct internal code is entered
+            in the Sign by box.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- SAVED RECORDS -->
+
+    <div class="card records">
+
+        <h2>
+            Saved Contributions
+        </h2>
+
+
+        <div id="records">
+
+            <p class="small">
+                No saved contributions yet.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</main>
+
+</section>
+
+
+
+<script>
+
+
+/* =====================================================
+   SECRET CONTRIBUTION CODE
+===================================================== */
+
+const SECRET_CODE = "120086";
+
+
+let currentYear = 2026;
+
+
+
+/* =====================================================
+   PAGE 1 -> PAGE 2
+===================================================== */
+
+function openLogin(){
+
+    document
+        .getElementById("welcome")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("loginPage")
+        .classList
+        .remove("hidden");
+
+}
+
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login(){
+
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("password")
+        .value;
+
+
+    if(
+        email === "" ||
+        password === ""
+    ){
+
+        alert(
+            "Please enter Gmail ID and password."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       This is only a local prototype.
+
+       The password is NOT stored.
+    */
+
+
+    document
+        .getElementById("loginPage")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("app")
+        .classList
+        .remove("hidden");
+
+
+    /*
+       For now use the Ganpati photo
+       as the profile circle.
+    */
+
+    document
+        .getElementById("profilePhoto")
+        .src = "ganpati.jpg";
+
+
+    goHome();
+
+}
+
+
+
+/* =====================================================
+   HIDE ALL APP PAGES
+===================================================== */
+
+function hidePages(){
+
+    document
+        .getElementById("home")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("memories")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("yearPage")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("contributionPage")
+        .classList
+        .add("hidden");
+
+}
+
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+    hidePages();
+
+
+    document
+        .getElementById("home")
+        .classList
+        .remove("hidden");
+
+}
+
+
+
+/* =====================================================
+   MEMORIES
+===================================================== */
+
+function showMemories(){
+
+    hidePages();
+
+
+    document
+        .getElementById("memories")
+        .classList
+        .remove("hidden");
+
+
+    renderYears();
+
+}
+
+
+
+/* =====================================================
+   GET YEARS
+===================================================== */
+
+function getYears(){
+
+    return JSON.parse(
+
+        localStorage.getItem(
+            "ganpatiYears"
+        )
+
+        ||
+
+        "[2026,2027]"
+
+    );
+
+}
+
+
+
+/* =====================================================
+   DISPLAY YEARS
+===================================================== */
+
+function renderYears(){
+
+    const years = getYears();
+
+
+    const container =
+        document.getElementById(
+            "yearCards"
+        );
+
+
+    container.innerHTML = "";
+
+
+    years.forEach(function(year){
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "card clickable";
+
+
+        card.onclick =
+            function(){
+
+                openYear(year);
+
+            };
+
+
+        card.innerHTML = `
+
+            <div class="year">
+                ${year}
+            </div>
+
+            <p>
+                Ganpati memories from ${year}
+            </p>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   ADD NEW YEAR WITH +
+===================================================== */
+
+function addYear(){
+
+    const answer =
+        prompt(
+            "Enter the year you want to add:"
+        );
+
+
+    if(!answer){
+
+        return;
+
+    }
+
+
+    const year =
+        parseInt(
+            answer,
+            10
+        );
+
+
+    if(
+        isNaN(year) ||
+        year < 2026 ||
+        year > 2100
+    ){
+
+        alert(
+            "Please enter a valid year."
+        );
+
+        return;
+
+    }
+
+
+    const years =
+        getYears();
+
+
+    if(
+        years.includes(year)
+    ){
+
+        alert(
+            "This year already exists."
+        );
+
+        return;
+
+    }
+
+
+    years.push(year);
+
+
+    years.sort(
+        function(a,b){
+
+            return a-b;
+
+        }
+    );
+
+
+    localStorage.setItem(
+
+        "ganpatiYears",
+
+        JSON.stringify(years)
+
+    );
+
+
+    renderYears();
+
+}
+
+
+
+/* =====================================================
+   OPEN A YEAR
+===================================================== */
+
+function openYear(year){
+
+    currentYear = year;
+
+
+    hidePages();
+
+
+    document
+        .getElementById("yearPage")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("yearTitle")
+        .innerText =
+            year + " Memories";
+
+
+    document
+        .getElementById("photoPreview")
+        .innerHTML = "";
+
+
+    document
+        .getElementById("videoPreview")
+        .innerHTML = "";
+
+}
+
+
+
+/* =====================================================
+   ADD PHOTOS
+===================================================== */
+
+function addPhotos(input){
+
+    const preview =
+        document.getElementById(
+            "photoPreview"
+        );
+
+
+    const files =
+        Array.from(
+            input.files
+        );
+
+
+    files.forEach(
+        function(file){
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+
+            image.src =
+                URL.createObjectURL(
+                    file
+                );
+
+
+            preview.appendChild(
+                image
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   ADD VIDEOS
+===================================================== */
+
+function addVideos(input){
+
+    const preview =
+        document.getElementById(
+            "videoPreview"
+        );
+
+
+    const files =
+        Array.from(
+            input.files
+        );
+
+
+    files.forEach(
+        function(file){
+
+            const video =
+                document.createElement(
+                    "video"
+                );
+
+
+            video.src =
+                URL.createObjectURL(
+                    file
+                );
+
+
+            video.controls = true;
+
+
+            preview.appendChild(
+                video
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   CONTRIBUTION PAGE
+===================================================== */
+
+function showContribution(){
+
+    hidePages();
+
+
+    document
+        .getElementById(
+            "contributionPage"
+        )
+        .classList
+        .remove("hidden");
+
+
+    if(
+        document
+        .getElementById("cDate")
+        .value === ""
+    ){
+
+        document
+        .getElementById("cDate")
+        .value =
+            new Date()
+            .toISOString()
+            .slice(0,10);
+
+    }
+
+
+    updateAcknowledgement();
+
+
+    showRecords();
+
+}
+
+
+
+/* =====================================================
+   LIVE ACKNOWLEDGEMENT
+===================================================== */
+
+function updateAcknowledgement(){
+
+    document
+        .getElementById("showName")
+        .innerText =
+
+        document
+        .getElementById("cName")
+        .value
+
+        ||
+
+        "[name]";
+
+
+    document
+        .getElementById("showAmount")
+        .innerText =
+
+        document
+        .getElementById("cAmount")
+        .value
+
+        ||
+
+        "[amount]";
+
+
+    document
+        .getElementById("showDate")
+        .innerText =
+
+        document
+        .getElementById("cDate")
+        .value
+
+        ||
+
+        "[date]";
+
+}
+
+
+document
+    .getElementById("cName")
+    .addEventListener(
+        "input",
+        updateAcknowledgement
+    );
+
+
+document
+    .getElementById("cAmount")
+    .addEventListener(
+        "input",
+        updateAcknowledgement
+    );
+
+
+document
+    .getElementById("cDate")
+    .addEventListener(
+        "input",
+        updateAcknowledgement
+    );
+
+
+
+/* =====================================================
+   SAVE CONTRIBUTION
+===================================================== */
+
+function saveContribution(){
+
+    const name =
+        document
+        .getElementById("cName")
+        .value
+        .trim();
+
+
+    const amount =
+        document
+        .getElementById("cAmount")
+        .value
+        .trim();
+
+
+    const date =
+        document
+        .getElementById("cDate")
+        .value;
+
+
+    const sign =
+        document
+        .getElementById("cSign")
+        .value
+        .trim();
+
+
+
+    /* Check basic details */
+
+    if(
+        name === "" ||
+        amount === "" ||
+        date === ""
+    ){
+
+        alert(
+            "Please fill Name, Amount and Date."
+        );
+
+        return;
+
+    }
+
+
+
+    /*
+       IMPORTANT:
+
+       ONLY 120086 saves the contribution.
+
+       The number itself is NOT saved.
+       The number itself is NOT displayed.
+    */
+
+    if(
+        sign !== SECRET_CODE
+    ){
+
+        alert(
+            "Contribution was not saved."
+        );
+
+        return;
+
+    }
+
+
+
+    /*
+       Get old records
+    */
+
+    const contributions =
+        JSON.parse(
+
+            localStorage.getItem(
+                "ganpatiContributions"
+            )
+
+            ||
+
+            "[]"
+
+        );
+
+
+
+    /*
+       Save contribution.
+
+       We save Krishna as the signature.
+    */
+
+    contributions.push({
+
+        name:name,
+
+        amount:amount,
+
+        date:date,
+
+        signedBy:"Krishna"
+
+    });
+
+
+
+    localStorage.setItem(
+
+        "ganpatiContributions",
+
+        JSON.stringify(
+            contributions
+        )
+
+    );
+
+
+
+    alert(
+        "Contribution saved successfully!"
+    );
+
+
+
+    /*
+       Clear fields
+    */
+
+    document
+        .getElementById("cName")
+        .value = "";
+
+
+    document
+        .getElementById("cAmount")
+        .value = "";
+
+
+    document
+        .getElementById("cSign")
+        .value = "";
+
+
+    updateAcknowledgement();
+
+
+    showRecords();
+
+}
+
+
+
+/* =====================================================
+   SHOW SAVED CONTRIBUTIONS
+===================================================== */
+
+function showRecords(){
+
+    const contributions =
+        JSON.parse(
+
+            localStorage.getItem(
+                "ganpatiContributions"
+            )
+
+            ||
+
+            "[]"
+
+        );
+
+
+    const records =
+        document.getElementById(
+            "records"
+        );
+
+
+    records.innerHTML = "";
+
+
+
+    if(
+        contributions.length === 0
+    ){
+
+        records.innerHTML = `
+
+            <p class="small">
+                No saved contributions yet.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    contributions.forEach(
+        function(item){
+
+            const record =
+                document.createElement(
+                    "div"
+                );
+
+
+            record.className =
+                "record";
+
+
+            record.innerHTML = `
+
+                <b>
+                    ${escapeHTML(item.name)}
+                </b>
+
+                — ₹${escapeHTML(item.amount)}
+
+                <br>
+
+                <span class="small">
+
+                    Date:
+                    ${escapeHTML(item.date)}
+
+                    ·
+
+                    Sign by:
+                    Krishna
+
+                </span>
+
+            `;
+
+
+            records.appendChild(
+                record
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   PROTECT DISPLAY TEXT
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+
+        .replace(
+            /[&<>"']/g,
+
+            function(character){
+
+                return {
+
+                    "&":"&amp;",
+                    "<":"&lt;",
+                    ">":"&gt;",
+                    '"':"&quot;",
+                    "'":"&#039;"
+
+                }[character];
+
+            }
+        );
+
+}
+
+</script>
+
+</body>
+</html>
